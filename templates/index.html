@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gopaani</title>
+</head>
+<body>
+    <form method="POST" action = "/">
+        {% csrf_token %}
+Search <input id = "search" name="search" type="text" value={{key}}>
+<button id="btn1" type="submit">Click</button>
+{% if price is not None %}
+
+<table>
+    <th>price</th>
+    <td>{{price}}</td>
+    <th>version</th>
+    <td>{{version}}</td>
+    <th>artistName</th>
+    <td>{{artistName}}</td>
+    <th>primary genre name</th>
+    <td>{{primaryGenreName}}</td>
+</table>
+{% endif %}
+{% if error is not None %}
+<br/>
+<br/>
+{{error}}
+{% endif %}
+
+</form>
+</body>
+</html>
